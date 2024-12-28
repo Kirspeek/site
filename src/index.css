@@ -20,16 +20,40 @@ body {
   flex-wrap: nowrap;
   overflow-x: hidden;
 }
-
+/* black container text styles */
 .center-text-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: yellow;
+  background: rgb(255, 255, 255);
+}
+.outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(255, 255, 255);
 }
 
+.inner-container {
+  background: rgb(0, 0, 0);
+  width: 100vw;
+  padding: 2rem 3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin: 0;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 50px;
+}
 .lastContainer {
   display: flex;
   flex-direction: column;
@@ -43,13 +67,17 @@ body {
 .panel,
 .reverse-panel {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 50px;
+  padding: 20rem;
 }
 
 /* Background Colors */

@@ -1,0 +1,98 @@
+:root {
+  --gray-color: #808080;
+  --red-color: #d92d2b;
+  --blue-color: #3679f6;
+  --green-color: #056c4a;
+  --yellow-color: #f1c40f;
+}
+.name-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  width: 100%;
+  margin: 3rem 0 3rem 0;
+}
+.name-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 1.5s ease,
+    transform 1.5s ease;
+}
+
+.name-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-number {
+  color: color rgb(85, 26, 139);
+  font-size: 48px;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.section-name {
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 48px;
+  color: var(--gray-color);
+}
+.section-name:hover {
+  color: #b9b9b9;
+}
+.section-name::after {
+  content: "";
+  display: block;
+  height: 0.5px;
+  background-color: rgba(148, 163, 184, 0.2);
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 768px) {
+  .section-name::after {
+    display: none;
+    visibility: hidden;
+  }
+
+  .section-number {
+    font-size: 18px;
+  }
+  .section-name {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 376px) {
+  .section-number {
+    font-size: 14px;
+  }
+  .section-name {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 2550px) {
+  .name-section {
+    padding: 2rem;
+  }
+  .section-number {
+    font-size: 34px;
+  }
+  .section-name {
+    font-size: 34px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .section-name::after {
+    display: none;
+    visibility: hidden;
+  }
+}
