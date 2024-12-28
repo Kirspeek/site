@@ -6,9 +6,12 @@ import "/Users/ki/my-website/src/index.css";
 gsap.registerPlugin(ScrollTrigger);
 
 function MainSection() {
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 768);
-  const component = useRef<HTMLDivElement | null>(null);
-  const slider = useRef<HTMLDivElement | null>(null);
+  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(
+    window.innerWidth > 768
+  );
+  const component = useRef<HTMLDivElement>(null);
+  const slider = useRef<HTMLDivElement>(null);
+  const reverseSlider = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,19 +23,35 @@ function MainSection() {
   }, []);
 
   useLayoutEffect(() => {
-    if (!isLargeScreen || !slider.current || !component.current) return;
+    if (!isLargeScreen || !slider.current || !reverseSlider.current) return;
 
     const ctx = gsap.context(() => {
-      const panels = gsap.utils.toArray<HTMLDivElement>(".panel");
+      // Horizontal slider
+      const panels = gsap.utils.toArray<HTMLElement>(".panel");
       gsap.to(panels, {
         xPercent: -100 * (panels.length - 1),
         ease: "none",
         scrollTrigger: {
-          trigger: slider.current!,
+          trigger: slider.current,
           pin: true,
           scrub: 1,
           snap: 1 / (panels.length - 1),
           end: () => "+=" + slider.current!.offsetWidth,
+          markers: true,
+        },
+      });
+
+      // Reverse slider
+      const reversePanels = gsap.utils.toArray<HTMLElement>(".reverse-panel");
+      gsap.to(reversePanels, {
+        xPercent: -100 * (reversePanels.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: reverseSlider.current,
+          pin: true,
+          scrub: 1,
+          snap: 1 / (reversePanels.length - 1),
+          end: () => "+=" + reverseSlider.current!.offsetWidth,
           markers: true,
         },
       });
@@ -45,7 +64,7 @@ function MainSection() {
     return (
       <div className="App">
         <div className="firstContainer">
-          <h1>Testing horizontal scrolling w/ three sections</h1>
+          <h1>Testing horizontal scrolling</h1>
           <h2>First Container</h2>
         </div>
         <div className="container">
@@ -54,44 +73,34 @@ function MainSection() {
           <div className="panel orange">TWO</div>
           <div className="panel purple">THREE</div>
         </div>
-        <div className="lastContainer">Last Container</div>
+        <div className="lastContainer">
+          <h2>Reverse Content:</h2>
+          <div className="panel green">FOUR</div>
+          <div className="panel grey">FIVE</div>
+          <div className="panel rose">SIX</div>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="App" ref={component}>
-      <div className="firstContainer">
-        <h1>Testing horizontal scrolling w/ three sections</h1>
+      <div className="center-text-container">
+        <h1>Testing horizontal scrolling</h1>
         <h2>First Container</h2>
       </div>
-      <div ref={slider} className="container">
-        <div className="description panel blue">
-          <div>
-            SCROLL DOWN
-            <div className="scroll-down">
-              <div className="arrow"></div>
-            </div>
-          </div>
-        </div>
+      <div ref={slider} className="slider-container">
+        <div className="panel blue">SCROLL DOWN</div>
         <div className="panel red">ONE</div>
         <div className="panel orange">TWO</div>
         <div className="panel purple">THREE</div>
+      </div>
+      <div ref={reverseSlider} className="reverse-slider-container">
+        <div className="reverse-panel green">FOUR</div>
+        <div className="reverse-panel grey">FIVE</div>
+        <div className="reverse-panel rose">SIX</div>
       </div>
       <div className="lastContainer">Last Container</div>
-      <div ref={slider} className="container">
-        <div className="description panel blue">
-          <div>
-            SCROLL DOWN
-            <div className="scroll-down">
-              <div className="arrow"></div>
-            </div>
-          </div>
-        </div>
-        <div className="panel red">ONE</div>
-        <div className="panel orange">TWO</div>
-        <div className="panel purple">THREE</div>
-      </div>
     </div>
   );
 }
