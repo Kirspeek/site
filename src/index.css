@@ -11,9 +11,10 @@ body {
   margin: 0;
 }
 
+/* Common Container Styles */
 .slider-container,
 .reverse-slider-container {
-  width: 400vw; /* Adjusted to match the panels */
+  width: 400vw; /* Adjusted to match the number of panels */
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
@@ -35,9 +36,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: yellow;
+  background: lightgray;
 }
 
+/* Panel Styles */
 .panel,
 .reverse-panel {
   width: 100vw;
@@ -50,29 +52,43 @@ body {
   font-weight: bold;
 }
 
+/* Background Colors */
 .blue {
   background: blue;
 }
+
 .red {
   background: red;
 }
+
 .orange {
   background: orange;
 }
+
 .purple {
   background: purple;
 }
+
 .green {
   background: #22b527;
 }
+
 .grey {
   background: #4a4a4a;
 }
+
 .rose {
   background: #b686a6;
 }
 
-/* Styles for smaller screens */
+/* Reverse Slider Specific Styles */
+.reverse-slider-container {
+  width: 300vw; /* Adjusted based on the number of panels */
+  display: flex;
+  flex-direction: row-reverse; /* Ensures reverse alignment */
+}
+
+/* Responsive Design */
 @media screen and (max-width: 768px) {
   .slider-container,
   .reverse-slider-container {
@@ -84,7 +100,7 @@ body {
   .panel,
   .reverse-panel {
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
