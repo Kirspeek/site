@@ -1,0 +1,45 @@
+:root {
+  --gray-color: #808080;
+  --yellow-color: #f1c40f;
+  --red-color: #d92d2b;
+}
+
+.icon-links-container {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.icon-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    stroke 0.3s ease;
+}
+
+/* Icon styling */
+.icon-link svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: var(--gray-color);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Hover effects */
+.icon-link:hover svg {
+  transform: scale(1.1);
+  stroke: rgb(85, 26, 139);
+}

@@ -11,16 +11,14 @@ body {
   margin: 0;
 }
 
-/* Common Container Styles */
 .slider-container,
 .reverse-slider-container {
-  width: 400vw; /* Adjusted to match the number of panels */
+  width: 400vw;
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
 }
-/* black container text styles */
 .center-text-container {
   display: flex;
   flex-direction: column;
@@ -60,7 +58,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: lightgray;
+  background: rgb(255, 255, 255);
 }
 
 /* Panel Styles */
@@ -80,7 +78,6 @@ body {
   padding: 20rem;
 }
 
-/* Background Colors */
 .blue {
   background: blue;
 }
@@ -109,14 +106,12 @@ body {
   background: #b686a6;
 }
 
-/* Reverse Slider Specific Styles */
 .reverse-slider-container {
-  width: 300vw; /* Adjusted based on the number of panels */
+  width: 300vw;
   display: flex;
-  flex-direction: row-reverse; /* Ensures reverse alignment */
+  flex-direction: row-reverse;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
   .slider-container,
   .reverse-slider-container {

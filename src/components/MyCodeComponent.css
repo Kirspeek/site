@@ -1,0 +1,103 @@
+.code-tab {
+  width: 500px;
+  height: 600px;
+  margin: auto;
+  background: #71717124;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateX(100px);
+  transition:
+    opacity 1.5s ease,
+    transform 1.5s ease;
+  position: relative;
+}
+
+.code-tab.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.code-container {
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.code-container pre {
+  height: 88%;
+  margin: 0;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: pre-wrap;
+}
+.tab-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #71717124;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.red {
+  background-color: #dd4a42;
+}
+
+.yellow {
+  background-color: #e9d042;
+}
+
+.green {
+  background-color: #548e58;
+}
+
+@media screen and (max-width: 376px) {
+  .code-tab {
+    width: 280px;
+    height: 570px;
+  }
+
+  .code-container pre {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .code-tab {
+    width: 600px;
+    height: 700px;
+  }
+
+  .code-container pre {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (min-width: 2550px) {
+  .code-tab {
+    width: 700px;
+    height: 1200px;
+  }
+
+  .code-container pre {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}

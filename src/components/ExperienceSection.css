@@ -1,0 +1,139 @@
+.experience-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.section-wrapper {
+  width: 100%;
+  max-width: 800px;
+}
+
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tabs-trigger-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tabs-trigger {
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  border: none;
+  color: #808080;
+  background: rgba(113, 113, 113, 0.142);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tabs-trigger.active {
+  color: #4b2d8f;
+  background: #4a2d8f47;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.tabs-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(113, 113, 113, 0.142);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  text-align: center;
+  transition:
+    opacity 0.5s ease,
+    transform 0.3s ease;
+}
+
+.tabs-content {
+  opacity: 1;
+}
+
+.exp-title {
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #808080;
+  margin-bottom: 1rem;
+}
+
+.exp-date {
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: #808080;
+  margin-bottom: 1rem;
+}
+
+.exp-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  line-height: 20px;
+  text-align: left;
+  color: #808080;
+  padding: 2rem;
+}
+
+.exp-bullets li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.exp-bullets li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #4b2d8f;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.tech-stack li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #808080;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  letter-spacing: 1.2px;
+}

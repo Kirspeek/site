@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./Home.css";
+import IconsRow from "./IconsRow";
 
 function Home() {
   const homeLeftRef = useRef<HTMLDivElement | null>(null);
@@ -63,6 +64,7 @@ function Home() {
           specializing in building exceptional digital platforms.
         </div>
       </div>
+      <IconsRow />
     </div>
   );
 }

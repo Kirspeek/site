@@ -11,6 +11,6 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src"],
+  "include": ["src", "src/components/ProjectCard.tsx"],
   "exclude": ["node_modules", "dist"]
 }

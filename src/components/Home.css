@@ -66,7 +66,7 @@
 
 .line-section {
   flex-grow: 1;
-  height: 2px;
+  height: 3px;
   background-color: #808080;
   margin-bottom: 1.45rem;
 }
@@ -168,7 +168,7 @@
   }
 
   .d-parag {
-    font-size: 3.5rem;
+    font-size: 4rem;
     line-height: 4rem;
   }
 
@@ -177,7 +177,7 @@
   }
 
   .line-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 3.8rem;
   }
 }
 @media screen and (max-width: 376px) {
