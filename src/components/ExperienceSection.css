@@ -94,7 +94,6 @@
 
 .exp-bullets {
   list-style: none;
-  padding: 0;
   margin: 0;
   font-family: "Space Mono", monospace;
   font-weight: 600;
@@ -117,23 +116,4 @@
   position: absolute;
   left: 0;
   color: #4b2d8f;
-}
-
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.tech-stack li {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #808080;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  letter-spacing: 1.2px;
 }

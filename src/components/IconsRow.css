@@ -27,7 +27,6 @@
     stroke 0.3s ease;
 }
 
-/* Icon styling */
 .icon-link svg {
   width: 34px;
   height: 34px;
@@ -38,8 +37,21 @@
   stroke-linejoin: round;
 }
 
-/* Hover effects */
 .icon-link:hover svg {
   transform: scale(1.1);
   stroke: rgb(85, 26, 139);
+}
+
+@media screen and (max-width: 376px) {
+  .icon-links-container {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 20px auto;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
 }

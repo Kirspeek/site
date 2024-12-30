@@ -70,7 +70,8 @@
 @media screen and (max-width: 376px) {
   .code-tab {
     width: 280px;
-    height: 570px;
+    height: 500px;
+    font-size: 10px;
   }
 
   .code-container pre {
@@ -81,7 +82,7 @@
 @media screen and (min-width: 1440px) {
   .code-tab {
     width: 600px;
-    height: 700px;
+    height: 500px;
   }
 
   .code-container pre {

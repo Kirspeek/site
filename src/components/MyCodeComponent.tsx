@@ -94,9 +94,8 @@ const MyCodeComponent: React.FC = () => {
             ...coldarkCold,
             'pre[class*="language-"]': {
               ...materialLight['pre[class*="language-"]'],
-
-              fontSize: "15px",
-              lineHeight: "1.2",
+              fontSize: "10px",
+              lineHeight: "1.5",
             },
           }}
         >

@@ -73,11 +73,11 @@ const ProjectCard = forwardRef<HTMLDivElement, Props>(
           </div>
         </div>
         <p className="project-desc">{description}</p>
-        <ul className="tech-stack">
+        <div className="tech-stack">
           {skills.map((skill) => (
             <li key={skill}>{skill}</li>
           ))}
-        </ul>
+        </div>
         <div className="image-wrapper-container">
           <div className="image-wrapper">
             <img
