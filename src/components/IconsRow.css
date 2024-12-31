@@ -41,17 +41,34 @@
   transform: scale(1.1);
   stroke: rgb(85, 26, 139);
 }
+@media screen and (min-width: 2550px) {
+  .icon-link svg {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .icon-links-container {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 20px;
+    z-index: 10;
+    background-color: transparent;
+  }
+}
+@media screen and (max-width: 480px) {
+  .icon-links-container {
+    right: 40px;
+  }
+}
 
 @media screen and (max-width: 376px) {
   .icon-links-container {
-    margin: 10px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin: 20px auto;
-    width: 100%;
-    position: relative;
-    z-index: 10;
+    right: 20px;
   }
 }

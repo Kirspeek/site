@@ -67,9 +67,20 @@
   background-color: #548e58;
 }
 
+@media screen and (max-width: 480px) {
+  .code-tab {
+    width: 90%;
+    height: 500px;
+    font-size: 10px;
+  }
+
+  .code-container pre {
+    font-size: 10px;
+  }
+}
 @media screen and (max-width: 376px) {
   .code-tab {
-    width: 280px;
+    width: 100%;
     height: 500px;
     font-size: 10px;
   }

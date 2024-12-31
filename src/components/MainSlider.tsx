@@ -8,6 +8,9 @@ import ProjectCard from "./ProjectCard";
 import MyCodeComponent from "./MyCodeComponent";
 import ExperienceSection from "./ExperienceSection";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import Sidebar from "./Sidebar";
+import NameBox from "./NameBox";
+import IconsRow from "./IconsRow";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +49,6 @@ function MainSlider() {
         },
       });
 
-      // Reverse slider
       const reversePanels = gsap.utils.toArray<HTMLElement>(".reverse-panel");
       gsap.to(reversePanels, {
         xPercent: -100 * (reversePanels.length - 1),
@@ -69,7 +71,9 @@ function MainSlider() {
     return (
       <div className="App">
         <div className="center-text-container">
-          <Home />
+          <Sidebar />
+          <NameBox />
+          <IconsRow />
         </div>
         <div className="outer-container">
           <div className="inner-container">
@@ -148,6 +152,26 @@ function MainSlider() {
         </div>
         <div className="lastContainer">
           <ExperienceSection />
+        </div>{" "}
+        <div className="to-top-container">
+          <button
+            className="to-top-button"
+            onClick={() => {
+              const scrollToTop = () => {
+                const currentScroll = window.scrollY;
+                if (currentScroll > 0) {
+                  window.scrollTo(0, currentScroll - 70);
+                  requestAnimationFrame(scrollToTop);
+                }
+              };
+              scrollToTop();
+            }}
+          >
+            To top
+            <span className="arrow-icon">
+              <MdOutlineArrowOutward />
+            </span>
+          </button>
         </div>
       </div>
     );

@@ -182,6 +182,22 @@
   transform: scale(1.2);
 }
 
+@media screen and (max-width: 1200px) {
+  .project-card {
+    height: auto;
+  }
+  .project-title {
+    font-size: 18px;
+  }
+
+  .project-desc {
+    font-size: 12px;
+  }
+
+  .image-wrapper {
+    max-width: 300px;
+  }
+}
 @media screen and (max-width: 768px) {
   .project-card {
     height: auto;
@@ -202,7 +218,7 @@
 
 @media screen and (max-width: 480px) {
   .project-card {
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .project-title {
@@ -211,6 +227,7 @@
 
   .project-desc {
     font-size: 11px;
+    padding: 20px;
   }
 
   .tech-stack li {
@@ -219,6 +236,7 @@
   }
 
   .image-wrapper {
-    max-width: 250px;
+    max-width: 350px;
+    height: 90%;
   }
 }
