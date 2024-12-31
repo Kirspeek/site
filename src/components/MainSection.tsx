@@ -1,10 +1,13 @@
 import MainSlider from "./MainSlider";
-import "/Users/ki/my-website/src/index.css";
+import "../index.css";
+import { Suspense } from "react";
 
 function MainSection() {
   return (
     <>
-      <MainSlider />
+      <Suspense fallback={<div>Loading...</div>}>
+        <MainSlider />
+      </Suspense>
     </>
   );
 }
