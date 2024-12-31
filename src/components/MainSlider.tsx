@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
-import "/Users/ki/my-website/src/index.css";
+import "../index.css";
 import Home from "./Home";
 import SectionTitle from "./SectionTitle";
 import ProjectCard from "./ProjectCard";
