@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import "./Home.css";
+import React, { useRef } from 'react';
+import './Home.css';
 
 const NameBox: React.FC = () => {
   const homeLeftRef = useRef<HTMLDivElement | null>(null);
@@ -7,13 +7,10 @@ const NameBox: React.FC = () => {
   return (
     <div className="namebox">
       <div className="top-banner">
-        <div className="name-text">Iryna Cherepenko</div>
+        <p className="name-text">Iryna Cherepenko</p>
       </div>
       <div ref={homeLeftRef} className="home-left">
-        <div
-          id="animatedText"
-          className="max-w-full lg:max-w-xl faded-text d-parag"
-        >
+        <p className="d-parag">
           <a
             className="one"
             href="https://github.com/Kirspeek"
@@ -21,9 +18,9 @@ const NameBox: React.FC = () => {
             rel="noopener noreferrer"
           >
             software engineer
-          </a>{" "}
+          </a>{' '}
           specializing in building exceptional digital platforms.
-        </div>
+        </p>
       </div>
     </div>
   );

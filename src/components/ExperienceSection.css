@@ -29,7 +29,7 @@
 }
 
 .tabs-trigger {
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -62,7 +62,7 @@
   border-radius: 15px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
   height: auto;
   text-align: center;
   transition:
@@ -75,7 +75,7 @@
 }
 
 .exp-title {
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -85,7 +85,7 @@
 }
 
 .exp-date {
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-size: 14px;
   font-weight: 600;
   color: #808080;
@@ -95,7 +95,7 @@
 .exp-bullets {
   list-style: none;
   margin: 0;
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-weight: 600;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -112,7 +112,7 @@
 }
 
 .exp-bullets li::before {
-  content: "▹";
+  content: '▹';
   position: absolute;
   left: 0;
   color: #4b2d8f;
@@ -152,9 +152,7 @@
       font-size: 12px;
       letter-spacing: 2px;
     }
-    .tabs-container {
-      padding: 2rem;
-    }
+
     .experience-section {
       margin: 0;
     }
@@ -163,6 +161,7 @@
 @media screen and (max-width: 480px) {
   .experience-section {
     margin: 0;
+    padding: 0.5rem;
   }
 
   .exp-title {
@@ -179,12 +178,7 @@
     font-size: 9px;
     padding: 0.3rem 0.5rem;
   }
-  .tabs-container {
-    padding: 4rem;
-  }
-  .section-wrapper {
-    padding: 20px;
-  }
+
   .tabs-trigger {
     font-size: 10px;
   }
@@ -192,6 +186,6 @@
 
 @media screen and (max-width: 376px) {
   .tabs-container {
-    padding: 2rem;
+    padding: 0.5rem;
   }
 }

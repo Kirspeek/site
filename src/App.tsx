@@ -1,5 +1,5 @@
-import MainSection from "./components/MainSection";
-import "./index.css";
+import MainSection from './components/MainSection';
+import './index.css';
 
 export default function App() {
   return (

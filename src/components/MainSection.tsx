@@ -1,14 +1,12 @@
-import MainSlider from "./MainSlider";
-import "../index.css";
-import { Suspense } from "react";
+import React, { Suspense } from 'react';
+
+const MainSlider = React.lazy(() => import('../components/MainSlider'));
 
 function MainSection() {
   return (
-    <>
-      <Suspense fallback={<div>Loading...</div>}>
-        <MainSlider />
-      </Suspense>
-    </>
+    <Suspense fallback={<div>Loading...</div>}>
+      <MainSlider />
+    </Suspense>
   );
 }
 

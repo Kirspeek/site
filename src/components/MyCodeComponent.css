@@ -67,6 +67,15 @@
   background-color: #548e58;
 }
 
+@media screen and (max-width: 1024px) {
+  .code-tab {
+    height: 500px;
+  }
+
+  .code-container pre {
+    height: 450px;
+  }
+}
 @media screen and (max-width: 480px) {
   .code-tab {
     width: 90%;
@@ -75,13 +84,14 @@
   }
 
   .code-container pre {
+    height: 450px;
     font-size: 10px;
   }
 }
 @media screen and (max-width: 376px) {
   .code-tab {
     width: 100%;
-    height: 500px;
+    height: 510px;
     font-size: 10px;
   }
 
@@ -97,19 +107,8 @@
   }
 
   .code-container pre {
+    height: 450px;
     font-size: 14px;
     line-height: 1.6;
-  }
-}
-
-@media screen and (min-width: 2550px) {
-  .code-tab {
-    width: 700px;
-    height: 1200px;
-  }
-
-  .code-container pre {
-    font-size: 18px;
-    line-height: 1.8;
   }
 }

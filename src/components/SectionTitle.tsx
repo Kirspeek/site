@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import "./SectionTitle.css";
+import { useEffect, useRef } from 'react';
+import './SectionTitle.css';
 
 interface Props {
   sectionNumber: string;
@@ -14,7 +14,7 @@ const SectionTitle = ({ sectionNumber, name }: Props) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
+            entry.target.classList.add('animate');
           }
         });
       },

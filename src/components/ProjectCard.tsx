@@ -1,7 +1,7 @@
-import { forwardRef } from "react";
-import IconExternal from "./icons/IconExternal";
-import IconGitHub from "./icons/IconGitHub";
-import "./ProjectCard.css";
+import { forwardRef } from 'react';
+import IconExternal from './icons/IconExternal';
+import IconGitHub from './icons/IconGitHub';
+import './ProjectCard.css';
 
 interface Props {
   name: string;
@@ -13,13 +13,13 @@ interface Props {
 
 const imagesMap = [
   {
-    name: "Issue Tracker",
-    gif: "/assets/IssueTrackerGif_20s.gif",
+    name: 'Issue Tracker',
+    gif: '/assets/IssueTrackerGif_20s.gif',
   },
-  { name: "Game Hub", gif: "/assets/gameHubDemoGif.gif" },
+  { name: 'Game Hub', gif: '/assets/gameHubDemoGif.gif' },
   {
-    name: "Little Lemon Restaurant",
-    gif: "/assets/LittleLemonDemoGif.gif",
+    name: 'Little Lemon Restaurant',
+    gif: '/assets/LittleLemonDemoGif.gif',
   },
 ];
 
@@ -27,8 +27,8 @@ const getImageByName = (name: string) => {
   const imgMap = imagesMap.find((item) => item.name === name);
 
   const defaultMap = {
-    name: "No Project",
-    gif: "/assets/defaultGif.gif",
+    name: 'No Project',
+    gif: '/assets/defaultGif.gif',
   };
 
   return imgMap || defaultMap;
@@ -41,7 +41,7 @@ const ProjectCard = forwardRef<HTMLDivElement, Props>(
     const handleCardClick = () => {
       const url = liveLink || repoLink;
       if (url) {
-        window.open(url, "_blank", "noopener,noreferrer");
+        window.open(url, '_blank', 'noopener,noreferrer');
       }
     };
 

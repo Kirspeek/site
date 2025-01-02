@@ -1,5 +1,5 @@
-import React from "react";
-import "./Home.css";
+import React from 'react';
+import './Home.css';
 
 const SmallText: React.FC = () => {
   return (
@@ -19,7 +19,7 @@ const SmallText: React.FC = () => {
             <br /> © 2025
           </span>
         </div>
-      </div>{" "}
+      </div>{' '}
     </>
   );
 };

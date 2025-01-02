@@ -1,91 +1,33 @@
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import '../index.css';
-import Home from './Home';
 import SectionTitle from './SectionTitle';
 import ProjectCard from './ProjectCard';
 import MyCodeComponent from './MyCodeComponent';
 import ExperienceSection from './ExperienceSection';
 import { MdOutlineArrowOutward } from 'react-icons/md';
-import MobileVersion from './MobileVersion';
+import Sidebar from './Sidebar';
+import NameBox from './NameBox';
+import IconsRow from './IconsRow';
 
-gsap.registerPlugin(ScrollTrigger);
-
-function MainSlider() {
-  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(
-    window.innerWidth > 768
-  );
-  const component = useRef<HTMLDivElement>(null);
-  const slider = useRef<HTMLDivElement>(null);
-  const reverseSlider = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLargeScreen(window.innerWidth > 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useLayoutEffect(() => {
-    if (!isLargeScreen || !slider.current || !reverseSlider.current) return;
-
-    const ctx = gsap.context(() => {
-      const panels = gsap.utils.toArray<HTMLElement>('.panel');
-      gsap.to(panels, {
-        xPercent: -100 * (panels.length - 1),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: slider.current,
-          pin: true,
-          scrub: 1,
-          snap: 1 / (panels.length - 1),
-          end: () => '+=' + slider.current!.offsetWidth,
-          markers: false,
-        },
-      });
-
-      const reversePanels = gsap.utils.toArray<HTMLElement>('.reverse-panel');
-      gsap.to(reversePanels, {
-        xPercent: -100 * (reversePanels.length - 1),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: reverseSlider.current,
-          pin: true,
-          scrub: 1,
-          snap: 1 / (reversePanels.length - 1),
-          end: () => '+=' + reverseSlider.current!.offsetWidth,
-          markers: false,
-        },
-      });
-    }, component);
-
-    return () => ctx.revert();
-  }, [isLargeScreen]);
-
-  if (!isLargeScreen) {
-    return <MobileVersion />;
-  }
-
+function MobileVersion() {
   return (
-    <div className="App" ref={component}>
+    <div className="App">
       <div className="center-text-container">
-        <Home />
+        <Sidebar />
+        <NameBox />
+        <IconsRow />
       </div>
       <div className="outer-container">
         <div className="inner-container">
           <p className="text">I craft seamless user experiences</p>
         </div>
       </div>
-      <div className="title-container">
+      <div className="center-text-container">
         <MyCodeComponent />
       </div>
       <div id="about" className="title-container">
         <SectionTitle sectionNumber={'01'} name={'About me'} />
       </div>
-      <div ref={slider} className="slider-container">
+      <div className="slider-container">
         <div className="panel rose">
           Creating responsive and user-centric applications with React/NextJS
           and TypeScript
@@ -106,7 +48,7 @@ function MainSlider() {
       <div id="projects" className="title-container">
         <SectionTitle sectionNumber={'02'} name={"Things I've build"} />
       </div>
-      <div ref={reverseSlider} className="reverse-slider-container">
+      <div className="reverse-slider-container">
         <div className="reverse-panel">
           {' '}
           <ProjectCard
@@ -117,7 +59,6 @@ function MainSlider() {
           />
         </div>
         <div className="reverse-panel">
-          {' '}
           <ProjectCard
             name="Game Hub"
             repoLink="https://github.com/Kirspeek/Game_App"
@@ -127,7 +68,6 @@ function MainSlider() {
           />
         </div>
         <div className="reverse-panel">
-          {' '}
           <ProjectCard
             name="Issue Tracker"
             repoLink="https://github.com/Kirspeek/issue-tracker"
@@ -176,4 +116,4 @@ function MainSlider() {
   );
 }
 
-export default MainSlider;
+export default MobileVersion;

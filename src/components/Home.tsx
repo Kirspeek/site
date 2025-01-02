@@ -1,9 +1,9 @@
-import { useEffect, useRef } from "react";
-import "./Home.css";
-import IconsRow from "./IconsRow";
-import Sidebar from "./Sidebar";
-import NameBox from "./NameBox";
-import SmallText from "./SmallText";
+import { useEffect, useRef } from 'react';
+import './Home.css';
+import IconsRow from './IconsRow';
+import Sidebar from './Sidebar';
+import NameBox from './NameBox';
+import SmallText from './SmallText';
 
 function Home() {
   const homeLeftRef = useRef<HTMLDivElement | null>(null);
@@ -13,7 +13,7 @@ function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
+            entry.target.classList.add('animate');
           }
         });
       },
@@ -32,11 +32,11 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    const textElement = document.getElementById("animatedText");
+    const textElement = document.getElementById('animatedText');
 
     if (textElement) {
       setTimeout(() => {
-        textElement.classList.add("animate");
+        textElement.classList.add('animate');
       }, 1000);
     } else {
       console.error("Element with id 'animatedText' not found.");

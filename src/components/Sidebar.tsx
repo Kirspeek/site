@@ -1,12 +1,12 @@
-import React from "react";
-import { MdOutlineArrowOutward } from "react-icons/md";
-import "./Sidebar.css";
+import React from 'react';
+import { MdOutlineArrowOutward } from 'react-icons/md';
+import './Sidebar.css';
 
 const Sidebar: React.FC = () => {
   const sections = [
-    { name: "about", label: "About" },
-    { name: "projects", label: "Projects" },
-    { name: "experience", label: "Experience" },
+    { name: 'about', label: 'About' },
+    { name: 'projects', label: 'Projects' },
+    { name: 'experience', label: 'Experience' },
   ];
 
   const slowScrollToSection = (sectionName: string) => {

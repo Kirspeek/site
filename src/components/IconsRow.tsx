@@ -1,8 +1,8 @@
-import React from "react";
-import IconGitHub from "./icons/IconGitHub";
-import IconLinkedin from "./icons/IconLinkedin";
-import IconGmail from "./icons/IconGmail";
-import "./IconsRow.css";
+import React from 'react';
+import IconGitHub from './icons/IconGitHub';
+import IconLinkedin from './icons/IconLinkedin';
+import IconGmail from './icons/IconGmail';
+import './IconsRow.css';
 
 const IconsRow: React.FC = () => {
   return (

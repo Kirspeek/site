@@ -30,14 +30,14 @@
 .section-number {
   color: color rgb(85, 26, 139);
   font-size: 48px;
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
 .section-name {
-  font-family: "Space Mono", monospace;
+  font-family: 'Space Mono', monospace;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -48,7 +48,7 @@
   color: #b9b9b9;
 }
 .section-name::after {
-  content: "";
+  content: '';
   display: block;
   height: 0.5px;
   background-color: rgba(148, 163, 184, 0.2);

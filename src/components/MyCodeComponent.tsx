@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import React, { useEffect, useRef, useState } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {
   coldarkCold,
   ghcolors,
   materialLight,
   synthwave84,
   vscDarkPlus,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
-import "./MyCodeComponent.css";
-import { githubGist } from "react-syntax-highlighter/dist/esm/styles/hljs";
+} from 'react-syntax-highlighter/dist/esm/styles/prism';
+import './MyCodeComponent.css';
+import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const codeString = `
 const developer = {
@@ -40,7 +40,7 @@ const developer = {
 `;
 
 const MyCodeComponent: React.FC = () => {
-  const [typedCode, setTypedCode] = useState<string>("");
+  const [typedCode, setTypedCode] = useState<string>('');
   const codeTabRef = useRef(null);
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const MyCodeComponent: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
+            entry.target.classList.add('animate');
           }
         });
       },
@@ -76,7 +76,7 @@ const MyCodeComponent: React.FC = () => {
       if (codeTabRef.current) {
         observer.unobserve(codeTabRef.current);
       }
-      setTypedCode("");
+      setTypedCode('');
     };
   }, []);
 
@@ -94,8 +94,8 @@ const MyCodeComponent: React.FC = () => {
             ...coldarkCold,
             'pre[class*="language-"]': {
               ...materialLight['pre[class*="language-"]'],
-              fontSize: "10px",
-              lineHeight: "1.5",
+              fontSize: '10px',
+              lineHeight: '1.5',
             },
           }}
         >
