@@ -10,7 +10,7 @@ const NameBox: React.FC = () => {
         <p className="name-text">Iryna Cherepenko</p>
       </div>
       <div ref={homeLeftRef} className="home-left">
-        <p className="d-parag">
+        <div id="animatedText" className="d-parag">
           <a
             className="one"
             href="https://github.com/Kirspeek"
@@ -20,7 +20,7 @@ const NameBox: React.FC = () => {
             software engineer
           </a>{' '}
           specializing in building exceptional digital platforms.
-        </p>
+        </div>
       </div>
     </div>
   );
