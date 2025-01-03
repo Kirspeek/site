@@ -63,9 +63,10 @@
 }
 @media screen and (max-width: 480px) {
   .icon-links-container {
-    right: 20px;
-    bottom: 20px;
-    position: relative;
+    position: static;
+    padding-left: 300px;
+    display: grid;
+    gap: 3rem;
   }
 
   .icon-link svg {
@@ -76,6 +77,7 @@
 
 @media screen and (max-width: 376px) {
   .icon-links-container {
-    right: 20px;
+    padding-left: 200px;
+    gap: 1rem;
   }
 }
