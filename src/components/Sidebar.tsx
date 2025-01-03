@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import './Sidebar.css';
 
@@ -8,6 +8,8 @@ const Sidebar: React.FC = () => {
     { name: 'projects', label: 'Projects' },
     { name: 'experience', label: 'Experience' },
   ];
+
+  const [activeButton, setActiveButton] = useState<string | null>(null);
 
   const slowScrollToSection = (sectionName: string) => {
     const section = document.getElementById(sectionName);
@@ -24,6 +26,7 @@ const Sidebar: React.FC = () => {
         requestAnimationFrame(scrollToTarget);
       } else {
         window.scrollTo(0, sectionTop);
+        setActiveButton(null);
       }
     };
 
@@ -35,8 +38,16 @@ const Sidebar: React.FC = () => {
       {sections.map((section) => (
         <button
           key={section.name}
-          className="section-button"
-          onClick={() => slowScrollToSection(section.name)}
+          className={`section-button ${
+            activeButton === section.name ? 'pressed' : ''
+          }`}
+          onClick={() => {
+            if (activeButton !== section.name) {
+              setActiveButton(section.name);
+              slowScrollToSection(section.name);
+            }
+          }}
+          disabled={activeButton === section.name}
         >
           <span className="button-label">
             {section.label}
