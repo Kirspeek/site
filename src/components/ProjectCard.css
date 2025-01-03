@@ -213,7 +213,7 @@
 
 @media screen and (max-width: 480px) {
   .project-card {
-    padding: 20px;
+    padding: 0.5rem;
   }
 
   .project-title {
@@ -235,7 +235,7 @@
 
   .image-wrapper {
     max-width: 350px;
-    height: 90%;
+    height: auto;
   }
 }
 

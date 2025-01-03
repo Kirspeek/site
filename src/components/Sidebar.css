@@ -59,17 +59,23 @@
     display: flex;
     justify-content: left;
     flex-direction: row;
-    gap: 1rem;
+    gap: 6rem;
     margin: 0;
     width: auto;
   }
   .button-label {
     font-size: 0.5rem;
   }
+  .section-button {
+    padding: 0.5rem;
+  }
 }
 @media screen and (max-width: 321px) {
   .sidebar {
     gap: 0.5rem;
+  }
+  .section-button {
+    padding: 0;
   }
 }
 @media screen and (min-width: 2550px) {

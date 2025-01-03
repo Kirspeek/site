@@ -19,7 +19,7 @@ const NameBox: React.FC = () => {
           >
             software engineer
           </a>{' '}
-          specializing in building exceptional digital platforms.
+          specialized in building exceptional digital platforms.
         </div>
       </div>
     </div>

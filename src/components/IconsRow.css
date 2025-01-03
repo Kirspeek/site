@@ -63,8 +63,9 @@
 }
 @media screen and (max-width: 480px) {
   .icon-links-container {
-    right: 40px;
+    right: 20px;
     bottom: 20px;
+    position: relative;
   }
 
   .icon-link svg {

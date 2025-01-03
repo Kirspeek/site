@@ -84,7 +84,7 @@
   }
 
   .code-container pre {
-    height: 450px;
+    height: 420px;
     font-size: 10px;
   }
 }
@@ -97,6 +97,7 @@
 
   .code-container pre {
     font-size: 10px;
+    height: 430px;
   }
 }
 

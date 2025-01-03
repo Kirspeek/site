@@ -110,17 +110,24 @@
   .home-container {
     padding: 1rem;
   }
-
+  .home-left {
+    padding: 0;
+  }
   .name-text {
-    font-size: 2.5rem;
-    line-height: 2.2rem;
-    padding-bottom: 3rem;
+    font-size: 3rem;
+    line-height: 2.6rem;
+    margin-bottom: 2rem;
+    padding: 0;
+    letter-spacing: 5px;
   }
 
   .d-parag {
-    font-size: 1.5rem;
-    line-height: 1.2rem;
+    font-size: 2rem;
+    line-height: 1.8rem;
     padding-bottom: 3rem;
+  }
+  .namebox {
+    padding: 2em 0 2em 0.5rem;
   }
 }
 @media screen and (max-width: 321px) {

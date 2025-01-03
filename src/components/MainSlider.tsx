@@ -10,7 +10,7 @@ import ReusableSlider from './ReusableSlider';
 import Sidebar from './Sidebar';
 import NameBox from './NameBox';
 import IconsRow from './IconsRow';
-import RunningText from './RunningText';
+import Marquee from 'react-fast-marquee';
 
 function MainSlider() {
   const aboutSliderRef = useRef<HTMLDivElement>(null);
@@ -76,9 +76,13 @@ function MainSlider() {
         <NameBox />
         <IconsRow />
       </div>
-
-      <RunningText />
-
+      <div id="mobile" className="center-container">
+        <div className="inner-container">
+          <Marquee className="marquee-container">
+            <p className="text">I craft seamless user experiences</p>
+          </Marquee>
+        </div>
+      </div>
       <div className="center-container">
         <MyCodeComponent />
       </div>
@@ -93,16 +97,28 @@ function MainSlider() {
       <div id="projects" className="title-container">
         <SectionTitle sectionNumber="02" name="Things I've built" />
       </div>
+
       {projectPanels.map((panel, index) => (
         <div key={index} className="panel">
           {panel}
         </div>
       ))}
+
       <div id="experience" className="title-container">
         <SectionTitle sectionNumber="03" name="Where I've worked" />
       </div>
       <div className="center-container">
         <ExperienceSection />
+      </div>
+      <div id="mobile" className="center-container">
+        <div className="inner-container">
+          <Marquee className="marquee-container">
+            <div className="textbox">
+              Young professional Currently working as a fullstack developer
+              Based in Italy, Europe Originally from Ukraine © 2025
+            </div>
+          </Marquee>
+        </div>
       </div>
       <ToTopButton />
     </div>
