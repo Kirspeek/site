@@ -22,13 +22,7 @@ body {
   flex-wrap: nowrap;
   overflow-x: hidden;
 }
-.reverse-slider-container {
-  width: 300vw;
-  height: 100vh;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: hidden;
-}
+
 .center-container {
   display: flex;
   flex-direction: column;
@@ -37,6 +31,13 @@ body {
   height: 100vh;
   background: rgb(255, 255, 255);
   position: relative;
+}
+#start {
+  justify-content: start;
+  gap: 5rem;
+}
+#mobile {
+  height: 50vh;
 }
 .title-container {
   display: flex;
@@ -68,8 +69,7 @@ body {
   color: #c80000;
 }
 
-.panel,
-.reverse-panel {
+.panel {
   width: 100vw;
   height: auto;
   display: flex;
@@ -85,12 +85,6 @@ body {
 
 .rose {
   background: #b686a6;
-}
-
-.reverse-slider-container {
-  width: 300vw;
-  display: flex;
-  flex-direction: row-reverse;
 }
 
 .to-top-container {
@@ -140,24 +134,20 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .slider-container,
-  .reverse-slider-container {
+  .slider-container {
     width: 100%;
     flex-direction: column;
     height: auto;
   }
 
-  .panel,
-  .reverse-panel {
+  .panel {
     width: 100%;
     height: auto;
     box-sizing: border-box;
     text-align: center;
   }
 
-  .center-text-container,
-  .lastContainer {
-    height: auto;
+  .center-container {
     width: 100%;
     box-sizing: border-box;
     text-align: center;
@@ -173,7 +163,7 @@ body {
   .title-container {
     height: 30vh;
   }
-  .reverse-slider-container {
+  .slider-container {
     height: auto;
     width: 100%;
     box-sizing: border-box;
@@ -186,18 +176,21 @@ body {
     letter-spacing: 3px;
   }
   .panel {
-    font-size: 15px;
+    font-size: 20px;
+    text-align: left;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
   }
   .title-container {
     height: 30vh;
   }
-  .reverse-slider-container {
+  .slider-container {
     height: auto;
     width: 100%;
     box-sizing: border-box;
     text-align: center;
   }
-  .center-text-container {
+  .center-container {
     padding: 0.5rem;
   }
 }

@@ -186,6 +186,9 @@
 
 @media screen and (max-width: 376px) {
   .tabs-container {
-    padding: 0.5rem;
+    padding: 0;
+  }
+  .experience-section {
+    padding: 0;
   }
 }

@@ -10,6 +10,7 @@ import ReusableSlider from './ReusableSlider';
 import Sidebar from './Sidebar';
 import NameBox from './NameBox';
 import IconsRow from './IconsRow';
+import RunningText from './RunningText';
 
 function MainSlider() {
   const aboutSliderRef = useRef<HTMLDivElement>(null);
@@ -70,16 +71,14 @@ function MainSlider() {
   // Mobile Version Component
   const renderMobileVersion = () => (
     <div className="App">
-      <div className="center-container">
+      <div id="start" className="center-container">
         <Sidebar />
         <NameBox />
         <IconsRow />
       </div>
-      <div className="center-container">
-        <div className="inner-container">
-          <p className="text">I craft seamless user experiences</p>
-        </div>
-      </div>
+
+      <RunningText />
+
       <div className="center-container">
         <MyCodeComponent />
       </div>
@@ -95,7 +94,7 @@ function MainSlider() {
         <SectionTitle sectionNumber="02" name="Things I've built" />
       </div>
       {projectPanels.map((panel, index) => (
-        <div key={index} className="reverse-panel">
+        <div key={index} className="panel">
           {panel}
         </div>
       ))}
