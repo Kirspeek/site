@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MdOutlineArrowOutward } from 'react-icons/md';
+import './Home.css';
 
-interface ToTopButtonProps {
-  className?: string;
-}
+const ToTopButton: React.FC = () => {
+  const [isScrolling, setIsScrolling] = useState(false);
 
-const ToTopButton: React.FC<ToTopButtonProps> = ({ className }) => {
-  const scrollToTop = () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > 0) {
-      window.scrollTo(0, currentScroll - 70);
-      requestAnimationFrame(scrollToTop);
-    }
+  const slowScrollToTop = () => {
+    if (isScrolling) return;
+
+    setIsScrolling(true);
+
+    const scrollToTarget = () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > 10) {
+        window.scrollTo(0, currentScroll - currentScroll / 10);
+        requestAnimationFrame(scrollToTarget);
+      } else {
+        window.scrollTo(0, 0);
+        setIsScrolling(false);
+      }
+    };
+
+    scrollToTarget();
   };
 
   return (
-    <div className={`to-top-button ${className || ''}`}>
-      <button className="to-top-button" onClick={scrollToTop}>
+    <div className="to-top-button-container">
+      <button
+        className={`to-top-button ${isScrolling ? 'disabled' : ''}`}
+        onClick={slowScrollToTop}
+        disabled={isScrolling}
+      >
         To top
         <span className="arrow-icon">
           <MdOutlineArrowOutward />

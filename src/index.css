@@ -7,7 +7,10 @@ html {
   height: 100%;
   -webkit-overflow-scrolling: touch;
 }
-
+.favicon {
+  width: 100px;
+  height: 100px;
+}
 body {
   overflow-y: visible;
   position: relative;
@@ -16,7 +19,7 @@ body {
 }
 
 .slider-container {
-  width: 300vw;
+  width: 200vw;
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
@@ -140,8 +143,10 @@ body {
 }
 
 .rose {
+  width: 1000vh;
   background: #b686a6;
   padding: 2rem;
+  text-align: left;
 }
 
 .to-top-container {
@@ -282,25 +287,7 @@ body {
     padding: 0.5rem;
   }
 }
-@media screen and (min-width: 1200px) {
-  .panel {
-    width: 100%;
-    height: auto;
-    padding: 10rem;
-    box-sizing: border-box;
-    text-align: center;
-    font-size: 55px;
-  }
 
-  .inner-container {
-    padding: 1.5rem;
-  }
-
-  .text {
-    letter-spacing: 20px;
-    font-size: 80px;
-  }
-}
 @media screen and (min-width: 768px) {
   .contact-me-text {
     font-size: 0.8rem;
@@ -315,6 +302,26 @@ body {
   }
   .title-container {
     height: 50vh;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .panel {
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+    letter-spacing: 10px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 45px;
+  }
+
+  .inner-container {
+    padding: 1.5rem;
+  }
+
+  .text {
+    letter-spacing: 20px;
+    font-size: 80px;
   }
 }
 @media screen and (min-width: 2550px) {

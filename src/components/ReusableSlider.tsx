@@ -44,7 +44,7 @@ const ReusableSlider = React.forwardRef<HTMLDivElement, SliderProps>(
         ScrollTrigger.getAll().forEach((st) => st.kill());
       };
     }, [panels]);
-
+    ScrollTrigger.refresh();
     return (
       <div ref={componentRef} className={`slider-container ${className}`}>
         {panels.map((panel, index) => (

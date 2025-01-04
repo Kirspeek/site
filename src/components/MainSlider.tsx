@@ -31,10 +31,12 @@ function MainSlider() {
   }, []);
 
   const aboutPanels = [
-    'Creating responsive and user-centric applications with React/NextJS and TypeScript',
-    'Developing APIs and backend services using Nest.js and Node.js ensuring seamless integration and high-performance communication',
-    'Developing and maintaining SOAP and RESTful web services with expertise in database management using MongoDB and querying',
-    'Proven ability to work independently with a proactive mindset to push tasks forward',
+    'responsive and user-centric applications with React/NextJS and TypeScript',
+    'Developing APIs and backend services using Nest.js and Node.js',
+    'ensuring seamless integration and high-performance communication',
+    'Developing and maintaining SOAP and RESTful web services',
+    'database management using MongoDB and querying',
+    'Proven ability to work independently to push tasks forward',
   ];
 
   const projectPanels = [
