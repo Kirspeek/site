@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useImperativeHandle } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -7,50 +7,54 @@ gsap.registerPlugin(ScrollTrigger);
 interface SliderProps {
   panels: React.ReactNode[];
   className?: string;
-  sliderRef?: React.RefObject<HTMLDivElement>;
 }
 
-const ReusableSlider: React.FC<SliderProps> = ({
-  panels,
-  className = '',
-  sliderRef,
-}) => {
-  const componentRef = useRef<HTMLDivElement>(null);
+const ReusableSlider = React.forwardRef<HTMLDivElement, SliderProps>(
+  ({ panels, className = '' }, ref) => {
+    const componentRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    if (!sliderRef?.current) return;
+    useImperativeHandle(ref, () => componentRef.current as HTMLDivElement);
 
-    const ctx = gsap.context(() => {
-      gsap.to(sliderRef.current!.children, {
-        xPercent: -100 * (panels.length - 1),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sliderRef.current,
-          pin: true,
-          scrub: 1,
-          snap: 1 / (panels.length - 1),
-          end: () => '+=' + sliderRef.current!.offsetWidth,
-          markers: false,
-        },
-      });
-    }, componentRef);
+    useLayoutEffect(() => {
+      if (!componentRef.current) {
+        console.error('componentRef.current is null - DOM not ready');
+        return;
+      }
 
-    return () => ctx.revert();
-  }, [panels.length, sliderRef]);
+      console.log('componentRef.current:', componentRef.current);
 
-  return (
-    <div
-      ref={componentRef}
-      className={`slider-container ${className}`}
-      ref={sliderRef}
-    >
-      {panels.map((panel, index) => (
-        <div key={index} className="panel">
-          {panel}
-        </div>
-      ))}
-    </div>
-  );
-};
+      const ctx = gsap.context(() => {
+        gsap.to(componentRef.current!.children, {
+          xPercent: -100 * (panels.length - 1),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: componentRef.current,
+            pin: true,
+            scrub: 1,
+            snap: 1 / (panels.length - 1),
+            end: () => '+=' + componentRef.current!.offsetWidth,
+          },
+        });
+        console.log('GSAP animation initialized');
+      }, componentRef);
+
+      return () => {
+        console.log('Cleaning up GSAP and ScrollTrigger');
+        ctx.revert();
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      };
+    }, [panels]);
+
+    return (
+      <div ref={componentRef} className={`slider-container ${className}`}>
+        {panels.map((panel, index) => (
+          <div key={index} className="panel">
+            {panel}
+          </div>
+        ))}
+      </div>
+    );
+  }
+);
 
 export default ReusableSlider;
