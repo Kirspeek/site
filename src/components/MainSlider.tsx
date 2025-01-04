@@ -76,7 +76,7 @@ function MainSlider() {
       <img
         src="/assets/26.png"
         alt="Icon"
-        style={{ width: '32px', height: '32px' }}
+        style={{ width: '24px', height: '24px' }}
       />
       2025 professional portfolio
     </span>
