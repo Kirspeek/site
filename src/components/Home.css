@@ -103,6 +103,7 @@
 @media screen and (max-width: 1200px) {
   .namebox {
     gap: 5rem;
+    padding-top: 5rem;
   }
 }
 @media screen and (max-width: 768px) {
