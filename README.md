@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://www.kirspeek.dev/">
-    <img src="src/assets/23.png" alt="Logo" height="20px" width="auto" >
+    <img src="public/assets/23.png" alt="Logo" height="20px" width="auto" >
   </a>
   
   <h3 align="center">Personal Portfolio</h3>
