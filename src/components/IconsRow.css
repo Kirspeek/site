@@ -50,29 +50,19 @@
 
 @media screen and (max-width: 768px) {
   .icon-links-container {
-    bottom: 0px;
-    right: 10px;
-    flex-direction: row;
-    align-items: flex-end;
     z-index: 10;
-    background-color: transparent;
-    position: static;
-    padding-left: 80vw;
-    display: grid;
-    gap: 3rem;
+    bottom: 0;
+    right: 0;
+    position: relative;
+  }
+  .icon-link svg {
+    width: 24px;
+    height: 24px;
   }
 }
 @media screen and (max-width: 480px) {
   .icon-links-container {
-    position: static;
-    padding-left: 80vw;
-    display: grid;
-    gap: 3rem;
-  }
-
-  .icon-link svg {
-    width: 24px;
-    height: 24px;
+    position: relative;
   }
 }
 

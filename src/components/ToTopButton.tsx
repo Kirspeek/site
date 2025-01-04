@@ -2,7 +2,7 @@ import React from 'react';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 
 interface ToTopButtonProps {
-  className?: string; // Optional prop to allow custom styling
+  className?: string;
 }
 
 const ToTopButton: React.FC<ToTopButtonProps> = ({ className }) => {
@@ -15,7 +15,7 @@ const ToTopButton: React.FC<ToTopButtonProps> = ({ className }) => {
   };
 
   return (
-    <div className={`to-top-container ${className || ''}`}>
+    <div className={`to-top-button ${className || ''}`}>
       <button className="to-top-button" onClick={scrollToTop}>
         To top
         <span className="arrow-icon">

@@ -11,6 +11,7 @@ import Sidebar from './Sidebar';
 import NameBox from './NameBox';
 import IconsRow from './IconsRow';
 import Marquee from 'react-fast-marquee';
+import { GoArrowDownRight } from 'react-icons/go';
 
 function MainSlider() {
   const aboutSliderRef = useRef<HTMLDivElement>(null);
@@ -38,19 +39,6 @@ function MainSlider() {
 
   const projectPanels = [
     <ProjectCard
-      name="Little Lemon Restaurant"
-      repoLink="https://github.com/Kirspeek/little-lemon-restaurant"
-      description="A dynamic platform for online orders and table reservations."
-      skills={['React', 'JavaScript', 'HTML', 'CSS', 'Firebase']}
-    />,
-    <ProjectCard
-      name="Game Hub"
-      repoLink="https://github.com/Kirspeek/Game_App"
-      liveLink="https://game-app-green.vercel.app/"
-      description="Web app displaying a list of video games that can be filtered and sorted by multiple variables. Powered by the RAWG.io API."
-      skills={['React', 'TypeScript', 'HTML', 'CSS', 'Chakra UI']}
-    />,
-    <ProjectCard
       name="Issue Tracker"
       repoLink="https://github.com/Kirspeek/issue-tracker"
       description="Web application designed to help teams manage and track issues with categorized charts."
@@ -66,17 +54,37 @@ function MainSlider() {
         'NextAuth.js',
       ]}
     />,
+    <ProjectCard
+      name="Game Hub"
+      repoLink="https://github.com/Kirspeek/Game_App"
+      liveLink="https://game-app-green.vercel.app/"
+      description="Web app displaying a list of video games that can be filtered and sorted by multiple variables. Powered by the RAWG.io API."
+      skills={['React', 'TypeScript', 'HTML', 'CSS', 'Chakra UI']}
+    />,
+    <ProjectCard
+      name="Little Lemon Restaurant"
+      repoLink="https://github.com/Kirspeek/little-lemon-restaurant"
+      description="A dynamic platform for online orders and table reservations."
+      skills={['React', 'JavaScript', 'HTML', 'CSS', 'Firebase']}
+    />,
   ];
-
+  const texts = Array(10).fill(
+    'kirspeek.dev © 2025 Iryna Cherepenko portfolio'
+  );
   // Mobile Version Component
   const renderMobileVersion = () => (
     <div className="App">
       <div id="start" className="center-container">
         <Sidebar />
-        <NameBox />
-        <IconsRow />
+        <NameBox /> <div className="line"></div>
+        <div className="contact-me">
+          <div className="contact-me-text">
+            Contact Me <GoArrowDownRight />
+          </div>
+          <IconsRow />
+        </div>
       </div>
-      <div id="mobile" className="center-container">
+      <div id="mobile" className="title-container">
         <div className="inner-container">
           <Marquee className="marquee-container">
             <p className="text">I craft seamless user experiences</p>
@@ -99,7 +107,7 @@ function MainSlider() {
       </div>
 
       {projectPanels.map((panel, index) => (
-        <div key={index} className="panel">
+        <div key={index} className="panel cards">
           {panel}
         </div>
       ))}
@@ -110,13 +118,14 @@ function MainSlider() {
       <div className="center-container">
         <ExperienceSection />
       </div>
-      <div id="mobile" className="center-container">
+      <div className="title-container">
         <div className="inner-container">
           <Marquee className="marquee-container">
-            <div className="textbox">
-              Young professional Currently working as a fullstack developer
-              Based in Italy, Europe Originally from Ukraine © 2025
-            </div>
+            {texts.map((text, index) => (
+              <p key={index} className="textbox">
+                {text}
+              </p>
+            ))}
           </Marquee>
         </div>
       </div>
@@ -130,6 +139,14 @@ function MainSlider() {
       <div className="center-container">
         <Home />
       </div>
+      <div className="title-container">
+        <div className="inner-container">
+          <Marquee className="marquee-container">
+            <p className="text">I craft seamless user experiences</p>
+          </Marquee>
+        </div>
+      </div>
+
       <div className="center-container">
         <MyCodeComponent />
       </div>
@@ -144,12 +161,27 @@ function MainSlider() {
       <div id="projects" className="title-container">
         <SectionTitle sectionNumber="02" name="Things I've built" />
       </div>
-      <ReusableSlider ref={projectsSliderRef} panels={projectPanels} />
+      <ReusableSlider
+        className="cards"
+        ref={projectsSliderRef}
+        panels={projectPanels}
+      />
       <div id="experience" className="title-container">
         <SectionTitle sectionNumber="03" name="Where I've worked" />
       </div>
       <div className="center-container">
         <ExperienceSection />
+      </div>
+      <div className="title-container">
+        <div className="inner-container">
+          <Marquee className="marquee-container">
+            {texts.map((text, index) => (
+              <p key={index} className="textbox">
+                {text}
+              </p>
+            ))}
+          </Marquee>
+        </div>
       </div>
       <ToTopButton />
     </div>

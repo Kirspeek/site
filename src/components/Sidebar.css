@@ -53,6 +53,9 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  .sidebar {
+    flex: 1;
+  }
 }
 @media screen and (max-width: 480px) {
   .sidebar {
