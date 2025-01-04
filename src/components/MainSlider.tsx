@@ -97,11 +97,13 @@ function MainSlider() {
       <div id="about" className="title-container">
         <SectionTitle sectionNumber="01" name="About me" />
       </div>
+
       {aboutPanels.map((panel, index) => (
         <div key={index} className="panel rose">
           {panel}
         </div>
       ))}
+
       <div id="projects" className="title-container">
         <SectionTitle sectionNumber="02" name="Things I've built" />
       </div>
