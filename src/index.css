@@ -31,6 +31,16 @@ body {
   min-height: 100vh;
   background: rgb(255, 255, 255);
 }
+.panel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400vw;
+  height: 100vh;
+  background: #b686a6;
+}
+
 .cards {
   height: auto;
 }
@@ -171,7 +181,7 @@ body {
 }
 @media screen and (max-width: 480px) {
   .text {
-    font-size: 40px;
+    font-size: 20px;
   }
   .panel {
     font-size: 15px;
@@ -186,16 +196,16 @@ body {
     text-align: center;
   }
   #mobile {
-    min-height: 40vh;
+    min-height: 10vh;
   }
 }
 @media screen and (max-width: 376px) {
   .text {
-    font-size: 20px;
+    font-size: 10px;
     letter-spacing: 3px;
   }
   .panel {
-    font-size: 20px;
+    font-size: 12px;
     text-align: left;
     padding: 0.5rem;
     padding-bottom: 2rem;

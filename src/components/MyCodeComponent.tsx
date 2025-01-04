@@ -2,13 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {
   coldarkCold,
-  ghcolors,
   materialLight,
-  synthwave84,
-  vscDarkPlus,
 } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import './MyCodeComponent.css';
-import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const codeString = `
 const developer = {

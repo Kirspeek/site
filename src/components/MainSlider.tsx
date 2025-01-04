@@ -130,11 +130,17 @@ function MainSlider() {
       <div className="center-container">
         <Home />
       </div>
-      <MyCodeComponent />
+      <div className="center-container">
+        <MyCodeComponent />
+      </div>
       <div id="about" className="title-container">
         <SectionTitle sectionNumber="01" name="About me" />
       </div>
-      <ReusableSlider ref={aboutSliderRef} panels={aboutPanels} />
+      <ReusableSlider
+        ref={aboutSliderRef}
+        panels={aboutPanels}
+        className="rose"
+      />
       <div id="projects" className="title-container">
         <SectionTitle sectionNumber="02" name="Things I've built" />
       </div>
