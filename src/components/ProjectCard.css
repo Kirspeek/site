@@ -192,6 +192,10 @@
   .image-wrapper {
     max-width: 300px;
   }
+  .project-card {
+    width: 600px;
+    height: 700px;
+  }
 }
 @media screen and (max-width: 768px) {
   .project-card {
