@@ -179,7 +179,6 @@ body {
     font-size: 35px;
   }
   .panel {
-    width: auto;
     height: auto;
     box-sizing: border-box;
     text-align: left;
@@ -189,11 +188,17 @@ body {
   .rose {
     padding: 10rem;
   }
+  .cards {
+    width: auto;
+  }
   .center-container {
     min-height: auto;
   }
   .cards {
     gap: 0;
+  }
+  .title-container {
+    height: 30vh;
   }
 }
 
