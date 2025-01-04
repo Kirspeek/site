@@ -100,6 +100,11 @@
   color: rgb(85, 26, 139);
 }
 
+@media screen and (max-width: 1200px) {
+  .namebox {
+    gap: 5rem;
+  }
+}
 @media screen and (max-width: 768px) {
   .home-container {
     flex-direction: column;
