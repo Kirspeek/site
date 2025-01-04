@@ -1,50 +1,83 @@
-# React + TypeScript + Vite
+<div id="top"></div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<br />
+<div align="center">
+  <a href="https://www.kirspeek.dev/">
+    <img src="src/assets/44.png" alt="Logo" height="20px" width="auto" >
+  </a>
+  
+  <h3 align="center">Personal Portfolio</h3>
+  <p align="center">
+    <a href="https://www.kirspeek.dev/">View Website</a>
+    ·
+    <a href="https://github.com/Kirspeek/site">Code</a>
+  </p>
+</div>
 
-Currently, two official plugins are available:
+<br /><br />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<!-- ABOUT THE PROJECT -->
 
-## Expanding the ESLint configuration
+## About The Project
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<p align="center">
+   <a href="https://www.kirspeek.dev/">
 
-- Configure the top-level `parserOptions` property like this:
+  </a>
+</p>
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+A fully responsive personal portfolio, displaying all my techs & tools, as well as the pet projects I'm most proud of.
+Plus, a little touch of web design, which is something I really love and appreciate!
+
+### Built With
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- HTML
+- CSS
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+To get a local copy up and running, follow these simple example steps:
+
+### Prerequisites
+
+Ensure you have npm installed:
+
+```sh
+npm install npm@latest -g
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Installation
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+1. Clone the repo
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
+```sh
+git clone https://github.com/Kirspeek/site.git
 ```
+
+2. Install NPM Packages
+
+```sh
+npm install
+```
+
+3. Run the app in development mode
+
+```sh
+npm start
+```
+
+4. Open [http://localhost:5173](http://localhost:5173) (port number might differ) to view it in your browser. The page will reload as you make changes to the code.
+
+## Contact
+
+Iryna - [LinkedIn](https://www.linkedin.com/in/irynacherepenko/)
+
+Project Link: [https://github.com/Kirspeek/site](https://github.com/Kirspeek/site)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+# portfolio
