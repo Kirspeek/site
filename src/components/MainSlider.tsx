@@ -69,7 +69,17 @@ function MainSlider() {
     />,
   ];
   const texts = Array(10).fill(
-    'kirspeek.dev © 2025 Iryna Cherepenko portfolio'
+    <span
+      style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}
+    >
+      kirspeek.dev
+      <img
+        src="/assets/26.png"
+        alt="Icon"
+        style={{ width: '32px', height: '32px' }}
+      />
+      2025 professional portfolio
+    </span>
   );
   // Mobile Version Component
   const renderMobileVersion = () => (
