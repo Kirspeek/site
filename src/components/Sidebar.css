@@ -47,7 +47,22 @@
   .section-button {
     padding: 0.5rem 2rem;
   }
+
+  .sidebar {
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    align-items: start;
+    padding: 0;
+  }
+  .button-label {
+    margin: 0;
+  }
+  .flexible-texts {
+    padding-bottom: 0;
+  }
 }
+
 @media screen and (max-width: 768px) {
   .sidebar {
     flex-direction: column;
