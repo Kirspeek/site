@@ -18,12 +18,12 @@ function MainSlider() {
   const projectsSliderRef = useRef<HTMLDivElement>(null);
 
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(
-    window.innerWidth > 768
+    window.innerWidth > 1400
   );
 
   useEffect(() => {
     const handleResize = () => {
-      setIsLargeScreen(window.innerWidth > 768);
+      setIsLargeScreen(window.innerWidth > 1400);
     };
 
     window.addEventListener('resize', handleResize);
