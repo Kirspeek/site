@@ -191,23 +191,17 @@ body {
     letter-spacing: 10px;
     font-size: 35px;
   }
-
   .panel {
-    height: auto;
-    font-size: 35px;
-    padding: 3rem;
+    width: 100%;
+    font-size: 25px;
   }
-
-  .rose-container {
-    padding: 10rem;
+  .rose {
+    padding: 5rem;
+    color: rgb(55, 2, 0);
+    background: #b686a6;
   }
-
   .center-container {
     justify-content: flex-start;
-  }
-
-  .cards-container {
-    gap: 0;
   }
 
   .title-container {
@@ -224,11 +218,10 @@ body {
   .panel {
     width: 100%;
     font-size: 25px;
-    padding: 0;
   }
 
   .rose {
-    padding: 3rem;
+    padding: 1rem;
     color: rgb(55, 2, 0);
     background: #b686a6;
   }
