@@ -134,7 +134,7 @@ function MainSlider() {
         <ExperienceSection />
       </div>{' '}
       <ToTopButton />
-      <div className="title-container">
+      <div className="last-container">
         <div className="inner-container">
           <Marquee className="marquee-container">
             {texts.map((text, index) => (
