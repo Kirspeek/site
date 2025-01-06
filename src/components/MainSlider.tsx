@@ -38,6 +38,11 @@ function MainSlider() {
     'database management using MongoDB and querying',
     'Proven ability to work independently to push tasks forward',
   ];
+  const LargeAboutPanels = [
+    'Crafting responsive, user-focused web applications using React/Next.js and TypeScript <br/> Delivering intuitive and engaging interfaces optimized for performance',
+    'Building robust APIs and backend services with Nest.js and Node.js <br/> ensuring seamless integration, secure communication, and high performance for scalable applications',
+    'Maintaining reliable SOAP and RESTful web services, managing databases with MongoDB, and leveraging effective querying techniques </br> Proven ability to work independently to drive projects forward',
+  ];
 
   const projectPanels = [
     <ProjectCard
@@ -109,29 +114,26 @@ function MainSlider() {
       <div id="about" className="title-container">
         <SectionTitle sectionNumber="01" name="About me" />
       </div>
-
       {aboutPanels.map((panel, index) => (
         <div key={index} className="panel rose">
           {panel}
         </div>
       ))}
-
       <div id="projects" className="title-container">
         <SectionTitle sectionNumber="02" name="Things I've built" />
       </div>
-
       {projectPanels.map((panel, index) => (
         <div key={index} className="panel cards">
           {panel}
         </div>
       ))}
-
       <div id="experience" className="title-container">
         <SectionTitle sectionNumber="03" name="Where I've worked" />
       </div>
       <div className="center-container">
         <ExperienceSection />
-      </div>
+      </div>{' '}
+      <ToTopButton />
       <div className="title-container">
         <div className="inner-container">
           <Marquee className="marquee-container">
@@ -143,7 +145,6 @@ function MainSlider() {
           </Marquee>
         </div>
       </div>
-      <ToTopButton />
     </div>
   );
 
@@ -160,7 +161,6 @@ function MainSlider() {
           </Marquee>
         </div>
       </div>
-
       <div className="center-container">
         <MyCodeComponent />
       </div>
@@ -169,14 +169,18 @@ function MainSlider() {
       </div>
       <ReusableSlider
         ref={aboutSliderRef}
-        panels={aboutPanels}
-        className="rose"
+        panels={LargeAboutPanels.map((panel, index) => (
+          <div key={index} dangerouslySetInnerHTML={{ __html: panel }} />
+        ))}
+        className="rose-container"
+        panelClassName="rose"
       />
       <div id="projects" className="title-container">
         <SectionTitle sectionNumber="02" name="Things I've built" />
       </div>
       <ReusableSlider
-        className="cards"
+        className="cards-container"
+        panelClassName="panel"
         ref={projectsSliderRef}
         panels={projectPanels}
       />
@@ -185,7 +189,8 @@ function MainSlider() {
       </div>
       <div className="center-container">
         <ExperienceSection />
-      </div>
+      </div>{' '}
+      <ToTopButton />
       <div className="title-container">
         <div className="inner-container">
           <Marquee className="marquee-container">
@@ -197,7 +202,6 @@ function MainSlider() {
           </Marquee>
         </div>
       </div>
-      <ToTopButton />
     </div>
   );
 

@@ -7,10 +7,11 @@ gsap.registerPlugin(ScrollTrigger);
 interface SliderProps {
   panels: React.ReactNode[];
   className?: string;
+  panelClassName?: string;
 }
 
 const ReusableSlider = React.forwardRef<HTMLDivElement, SliderProps>(
-  ({ panels, className = '' }, ref) => {
+  ({ panels, className = '', panelClassName = 'panel' }, ref) => {
     const componentRef = useRef<HTMLDivElement>(null);
 
     useImperativeHandle(ref, () => componentRef.current as HTMLDivElement);
@@ -20,8 +21,6 @@ const ReusableSlider = React.forwardRef<HTMLDivElement, SliderProps>(
         console.error('componentRef.current is null - DOM not ready');
         return;
       }
-
-      console.log('componentRef.current:', componentRef.current);
 
       const ctx = gsap.context(() => {
         gsap.to(componentRef.current!.children, {
@@ -44,11 +43,13 @@ const ReusableSlider = React.forwardRef<HTMLDivElement, SliderProps>(
         ScrollTrigger.getAll().forEach((st) => st.kill());
       };
     }, [panels]);
+
     ScrollTrigger.refresh();
+
     return (
       <div ref={componentRef} className={`slider-container ${className}`}>
         {panels.map((panel, index) => (
-          <div key={index} className="panel">
+          <div key={index} className={panelClassName}>
             {panel}
           </div>
         ))}

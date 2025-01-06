@@ -45,8 +45,10 @@ function Home() {
   return (
     <div id="home" className="home-container w-full flex">
       <IconsRow />
-      <SmallText />
-      <Sidebar />
+      <div className="sidebar-flexible-container">
+        <SmallText />
+        <Sidebar />
+      </div>
       <NameBox />
     </div>
   );

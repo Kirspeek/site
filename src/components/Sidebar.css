@@ -43,7 +43,7 @@
   position: relative;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1439px) {
   .section-button {
     padding: 0.5rem 2rem;
   }
@@ -54,7 +54,7 @@
     margin: 0 auto;
     align-items: start;
     padding: 0;
-    flex: 1;
+    flex: non;
   }
   .button-label {
     margin: 0;
@@ -68,9 +68,7 @@
   .sidebar {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .sidebar {
-    flex: 1;
+    flex: 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -91,7 +89,7 @@
 }
 @media screen and (max-width: 321px) {
   .sidebar {
-    gap: 0.5rem;
+    gap: 4rem;
   }
   .section-button {
     padding: 0;
