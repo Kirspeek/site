@@ -201,6 +201,7 @@ body {
   }
   .center-container {
     justify-content: flex-start;
+    min-height: auto;
   }
 
   .title-container {
