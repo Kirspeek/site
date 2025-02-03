@@ -134,6 +134,7 @@ body {
   width: 100%;
   height: min-content;
   box-sizing: border-box;
+  padding: 2rem;
 }
 .text {
   color: rgb(255, 255, 255);
