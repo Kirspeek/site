@@ -13,16 +13,14 @@
   text-align: center;
   width: 100%;
   margin: 3rem 0 3rem 0;
-}
-.name-section {
   opacity: 0;
   transform: translateY(50px);
   transition:
-    opacity 1.5s ease,
-    transform 1.5s ease;
+    opacity 1s ease,
+    transform 1s ease;
 }
 
-.name-section.animate {
+.name-section.section-title-animate {
   opacity: 1;
   transform: translateY(0);
 }

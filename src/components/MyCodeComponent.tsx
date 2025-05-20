@@ -57,7 +57,7 @@ const MyCodeComponent: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
+            entry.target.classList.add('code-tab-animate');
           }
         });
       },

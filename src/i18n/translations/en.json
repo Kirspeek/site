@@ -1,0 +1,142 @@
+{
+  "common": {
+    "copyright": "© 2025",
+    "portfolio": "2025 professional portfolio",
+    "domain": "kirspeek.dev",
+    "linkedin": "LinkedIn"
+  },
+  "home": {
+    "name": "Iryna Cherepenko",
+    "title": "software engineer",
+    "tagline": "I craft seamless user experiences",
+    "contact": "Contact Me",
+    "subtitle": "specialized in building exceptional digital platforms"
+  },
+  "about": {
+    "title": "About me",
+    "sectionNumber": "01",
+    "panels": [
+      "responsive and user-centric applications with React/NextJS and TypeScript",
+      "Developing APIs and backend services using Nest.js and Node.js",
+      "ensuring seamless integration and high-performance communication",
+      "Developing and maintaining SOAP and RESTful web services",
+      "database management using MongoDB and querying",
+      "Proven ability to work independently to push tasks forward"
+    ],
+    "largePanels": [
+      "Crafting responsive, user-focused web applications using React/Next.js and TypeScript <br/> Delivering intuitive and engaging interfaces optimized for performance",
+      "Building robust APIs and backend services with Nest.js and Node.js <br/> ensuring seamless integration, secure communication, and high performance for scalable applications",
+      "Maintaining reliable SOAP and RESTful web services, managing databases with MongoDB, and leveraging effective querying techniques </br> Proven ability to work independently to drive projects forward"
+    ]
+  },
+  "projects": {
+    "title": "Things I've built",
+    "sectionNumber": "02",
+    "projects": [
+      {
+        "name": "Issue Tracker",
+        "repoLink": "https://github.com/Kirspeek/issue-tracker",
+        "description": "Web application designed to help teams manage and track issues with categorized charts.",
+        "skills": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "HTML",
+          "Tailwind CSS",
+          "Radix UI",
+          "MySQL",
+          "Prisma",
+          "NextAuth.js"
+        ]
+      },
+      {
+        "name": "Game Hub",
+        "repoLink": "https://github.com/Kirspeek/Game_App",
+        "liveLink": "https://game-app-green.vercel.app/",
+        "description": "Web app displaying a list of video games that can be filtered and sorted by multiple variables. Powered by the RAWG.io API.",
+        "skills": ["React", "TypeScript", "HTML", "CSS", "Chakra UI"]
+      },
+      {
+        "name": "Little Lemon Restaurant",
+        "repoLink": "https://github.com/Kirspeek/little-lemon-restaurant",
+        "description": "A dynamic platform for online orders and table reservations.",
+        "skills": ["React", "JavaScript", "HTML", "CSS", "Firebase"]
+      }
+    ]
+  },
+  "experience": {
+    "title": "Where I've worked",
+    "sectionNumber": "03",
+    "jobs": {
+      "divergent": {
+        "name": "Divergent",
+        "role": "Full Stack Engineer",
+        "duration": "April 2024 - Mar 2025",
+        "description": [
+          "Start-up focused on building an email management platform with features like Delivery Monitoring, Blacklist Monitoring, and Safe Email Warming.",
+          "Creating user interfaces with data visualizations, charts, and components for tracking email performance.",
+          "Developing secure and efficient backend systems to ensure reliable functionality."
+        ],
+        "techStack": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Node.js",
+          "NestJS",
+          "MongoDB",
+          "Docker",
+          "GitHub Actions",
+          "Git"
+        ]
+      },
+      "codeAcademy": {
+        "name": "Code Academy",
+        "role": "Junior Front End Developer",
+        "duration": "December 2022 - April 2023",
+        "description": [
+          "Internship focused on improving skills with strong team support.",
+          "Leveraged modern tools like Vercel, Next.js, Tailwind CSS, and React to build a robust frontend architecture.",
+          "Integrated both backend and frontend for the project."
+        ],
+        "techStack": ["React", "Next.js", "Tailwind CSS", "JavaScript"]
+      },
+      "buildeezy": {
+        "name": "Buildeezy",
+        "role": "Frontend Developer",
+        "duration": "Mar 2025 - Present",
+        "location": "Singapore · Remote",
+        "website": "https://www.buildeezy.com/",
+        "description": [
+          "Currently I'm working on a modern web application with the following Tech-Stack:",
+          "React 18 with JavaScript",
+          "Material-UI (MUI) for UI components",
+          "Redux Toolkit for state management",
+          "React Router for navigation",
+          "Vite as the build tool",
+          "Features I'm Working On:",
+          "Profile managing system for all types of users",
+          "Message tool",
+          "Responsive interfaces",
+          "File upload and management",
+          "Secure data handling"
+        ],
+        "techStack": [
+          "React",
+          "JavaScript",
+          "Material-UI (MUI)",
+          "Redux Toolkit",
+          "React Router",
+          "Vite"
+        ]
+      }
+    }
+  },
+  "smallText": {
+    "left": "Young professional",
+    "center": "Currently working as a<br /> fullstack developer",
+    "right": "Based in Italy, Europe <br /> originally from Ukraine"
+  },
+  "navigation": {
+    "toTop": "Back to top"
+  }
+}

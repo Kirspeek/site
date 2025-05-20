@@ -1,8 +1,12 @@
+import { useTranslation } from 'react-i18next';
+
 interface Props {
   link: string;
 }
 
 const LinkedinButton = ({ link }: Props) => {
+  const { t } = useTranslation();
+
   return (
     <a
       href={link}

@@ -1,55 +1,55 @@
-import { useEffect, useRef } from 'react';
-import './Home.css';
+import { useEffect } from 'react';
 import IconsRow from './IconsRow';
 import Sidebar from './Sidebar';
 import NameBox from './NameBox';
 import SmallText from './SmallText';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 function Home() {
-  const homeLeftRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (homeLeftRef.current) {
-      observer.observe(homeLeftRef.current);
-    }
-
-    return () => {
-      if (homeLeftRef.current) {
-        observer.unobserve(homeLeftRef.current);
-      }
-    };
-  }, []);
+  const { ref: homeLeftRef, isIntersecting } = useIntersectionObserver({
+    threshold: 0.1,
+  });
 
   useEffect(() => {
     const textElement = document.getElementById('animatedText');
-
     if (textElement) {
       setTimeout(() => {
-        textElement.classList.add('animate');
+        textElement.classList.add('home-text-animate');
       }, 1000);
     } else {
       console.error("Element with id 'animatedText' not found.");
     }
   }, []);
+
   return (
-    <div id="home" className="home-container w-full flex">
+    <div
+      id="home"
+      style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        minHeight: '100vh',
+        position: 'relative',
+        margin: '0 auto',
+        padding: 0,
+        width: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
       <IconsRow />
-      <div className="sidebar-flexible-container">
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+          boxSizing: 'border-box',
+        }}
+      >
         <SmallText />
         <Sidebar />
       </div>
-      <NameBox />
+      <div ref={homeLeftRef} style={{ width: '100%' }}>
+        <NameBox />
+      </div>
     </div>
   );
 }

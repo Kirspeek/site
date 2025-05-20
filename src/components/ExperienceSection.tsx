@@ -1,49 +1,28 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './ExperienceSection.css';
+import IconExternal from './icons/IconExternal';
 
-const experienceData = {
-  tab1: {
-    name: 'Divergent',
-    role: 'Full Stack Engineer',
-    duration: 'April 2024 - Present',
-    description: [
-      'Start-up focused on building an email management platform with features like Delivery Monitoring, Blacklist Monitoring, and Safe Email Warming.',
-      'Creating user interfaces with data visualizations, charts, and components for tracking email performance.',
-      'Developing secure and efficient backend systems to ensure reliable functionality.',
-    ],
-    techStack: [
-      'React',
-      'Next.js',
-      'TypeScript',
-      'Node.js',
-      'NestJS',
-      'MongoDB',
-      'Docker',
-      'GitHub Actions',
-      'Git',
-    ],
-  },
-  tab2: {
-    name: 'Code Academy',
-    role: 'Junior Front End Developer',
-    duration: 'December 2022 - April 2023',
-    description: [
-      'Internship focused on improving skills with strong team support.',
-      'Leveraged modern tools like Vercel, Next.js, Tailwind CSS, and React to build a robust frontend architecture.',
-      'Integrated both backend and frontend for the project.',
-    ],
-    techStack: ['React', 'Next.js', 'Tailwind CSS', 'JavaScript'],
-  },
-};
+type JobKey = 'divergent' | 'codeAcademy' | 'buildeezy';
 
 const ExperienceSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'tab1' | 'tab2'>('tab1');
+  const { t } = useTranslation();
+  const [activeTab, setActiveTab] = useState<JobKey>('buildeezy');
 
-  const handleTabChange = (tab: 'tab1' | 'tab2') => {
+  const handleTabChange = (tab: JobKey) => {
     setActiveTab(tab);
   };
 
-  const { role, duration, description, techStack } = experienceData[activeTab];
+  const activeJob = t(`experience.jobs.${activeTab}`, {
+    returnObjects: true,
+  }) as {
+    name: string;
+    role: string;
+    duration: string;
+    description: string[];
+    techStack: string[];
+    website?: string;
+  };
 
   return (
     <div id="experience" className="experience-section">
@@ -51,29 +30,86 @@ const ExperienceSection: React.FC = () => {
         <div className="tabs-container">
           <div className="tabs-trigger-container">
             <button
-              className={`tabs-trigger ${activeTab === 'tab1' ? 'active' : ''}`}
-              onClick={() => handleTabChange('tab1')}
+              className={`tabs-trigger ${activeTab === 'buildeezy' ? 'active' : ''}`}
+              onClick={() => handleTabChange('buildeezy')}
             >
-              Divergent
+              {t('experience.jobs.buildeezy.name')}
             </button>
             <button
-              className={`tabs-trigger ${activeTab === 'tab2' ? 'active' : ''}`}
-              onClick={() => handleTabChange('tab2')}
+              className={`tabs-trigger ${activeTab === 'divergent' ? 'active' : ''}`}
+              onClick={() => handleTabChange('divergent')}
             >
-              Code Academy
+              {t('experience.jobs.divergent.name')}
+            </button>
+            <button
+              className={`tabs-trigger ${activeTab === 'codeAcademy' ? 'active' : ''}`}
+              onClick={() => handleTabChange('codeAcademy')}
+            >
+              {t('experience.jobs.codeAcademy.name')}
             </button>
           </div>
-          <div className="tabs-content-container">
+          <div
+            className="tabs-content-container"
+            style={{ position: 'relative' }}
+          >
+            {activeJob.website && (
+              <a
+                href={activeJob.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: '#4b2d8f',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  fontSize: '2.5rem',
+                  transition: 'color 0.2s',
+                  position: 'absolute',
+                  top: '1.2rem',
+                  right: '2rem',
+                  zIndex: 2,
+                }}
+                aria-label={`${activeJob.name} Website`}
+                onMouseOver={(e) => (e.currentTarget.style.color = '#7c4dff')}
+                onMouseOut={(e) => (e.currentTarget.style.color = '#4b2d8f')}
+              >
+                <IconExternal />
+              </a>
+            )}
             <div className="tabs-content">
-              <h3 className="exp-title">{role}</h3>
-              <p className="exp-date">{duration}</p>
+              <h3 className="exp-title">{activeJob.role}</h3>
+              <p className="exp-date">{activeJob.duration}</p>
               <ul className="exp-bullets">
-                {description.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {activeTab === 'buildeezy'
+                  ? activeJob.description.map((item, index) => {
+                      const lower = item.toLowerCase();
+                      const noArrow =
+                        index === 0 ||
+                        (lower.includes('features') &&
+                          lower.includes('working on'));
+                      return (
+                        <li
+                          key={index}
+                          style={
+                            noArrow
+                              ? {
+                                  listStyle: 'none',
+                                  paddingLeft: 0,
+                                  position: 'static',
+                                }
+                              : {}
+                          }
+                        >
+                          {item}
+                        </li>
+                      );
+                    })
+                  : activeJob.description.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
               </ul>
               <div className="tech-stack">
-                {techStack.map((tech, index) => (
+                {activeJob.techStack.map((tech, index) => (
                   <li key={index}>{tech}</li>
                 ))}
               </div>

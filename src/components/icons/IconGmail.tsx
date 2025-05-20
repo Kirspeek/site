@@ -4,7 +4,7 @@ const IconGmail = () => (
     role="img"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="#fff"
+    stroke="currentColor"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"

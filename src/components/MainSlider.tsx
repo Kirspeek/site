@@ -1,4 +1,5 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import '../index.css';
 import Home from './Home';
 import SectionTitle from './SectionTitle';
@@ -12,82 +13,45 @@ import NameBox from './NameBox';
 import IconsRow from './IconsRow';
 import Marquee from 'react-fast-marquee';
 import { GoArrowDownRight } from 'react-icons/go';
+import { useScreenSize } from '../hooks/useScreenSize';
 
 function MainSlider() {
+  const { t } = useTranslation();
   const aboutSliderRef = useRef<HTMLDivElement>(null);
   const projectsSliderRef = useRef<HTMLDivElement>(null);
+  const isLargeScreen = useScreenSize({ breakpoint: 1400, debounceTime: 100 });
 
-  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(
-    window.innerWidth > 1400
-  );
+  const aboutPanels = t('about.panels', { returnObjects: true }) as string[];
+  const LargeAboutPanels = t('about.largePanels', {
+    returnObjects: true,
+  }) as string[];
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLargeScreen(window.innerWidth > 1400);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const aboutPanels = [
-    'responsive and user-centric applications with React/NextJS and TypeScript',
-    'Developing APIs and backend services using Nest.js and Node.js',
-    'ensuring seamless integration and high-performance communication',
-    'Developing and maintaining SOAP and RESTful web services',
-    'database management using MongoDB and querying',
-    'Proven ability to work independently to push tasks forward',
-  ];
-  const LargeAboutPanels = [
-    'Crafting responsive, user-focused web applications using React/Next.js and TypeScript <br/> Delivering intuitive and engaging interfaces optimized for performance',
-    'Building robust APIs and backend services with Nest.js and Node.js <br/> ensuring seamless integration, secure communication, and high performance for scalable applications',
-    'Maintaining reliable SOAP and RESTful web services, managing databases with MongoDB, and leveraging effective querying techniques </br> Proven ability to work independently to drive projects forward',
-  ];
-
-  const projectPanels = [
+  const projectPanels = (
+    t('projects.projects', { returnObjects: true }) as any[]
+  ).map((project) => (
     <ProjectCard
-      name="Issue Tracker"
-      repoLink="https://github.com/Kirspeek/issue-tracker"
-      description="Web application designed to help teams manage and track issues with categorized charts."
-      skills={[
-        'Next.js',
-        'React',
-        'TypeScript',
-        'HTML',
-        'Tailwind CSS',
-        'Radix UI',
-        'MySQL',
-        'Prisma',
-        'NextAuth.js',
-      ]}
-    />,
-    <ProjectCard
-      name="Game Hub"
-      repoLink="https://github.com/Kirspeek/Game_App"
-      liveLink="https://game-app-green.vercel.app/"
-      description="Web app displaying a list of video games that can be filtered and sorted by multiple variables. Powered by the RAWG.io API."
-      skills={['React', 'TypeScript', 'HTML', 'CSS', 'Chakra UI']}
-    />,
-    <ProjectCard
-      name="Little Lemon Restaurant"
-      repoLink="https://github.com/Kirspeek/little-lemon-restaurant"
-      description="A dynamic platform for online orders and table reservations."
-      skills={['React', 'JavaScript', 'HTML', 'CSS', 'Firebase']}
-    />,
-  ];
+      name={project.name}
+      repoLink={project.repoLink}
+      liveLink={project.liveLink}
+      description={project.description}
+      skills={project.skills}
+    />
+  ));
+
   const texts = Array(10).fill(
     <span
       style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}
     >
-      kirspeek.dev
+      {t('common.domain')}
       <img
         src="/assets/26.png"
         alt="Icon"
         style={{ width: '24px', height: '24px' }}
       />
-      2025 professional portfolio
+      {t('common.portfolio')}
     </span>
   );
+
   // Mobile Version Component
   const renderMobileVersion = () => (
     <div className="App">
@@ -96,7 +60,7 @@ function MainSlider() {
         <NameBox /> <div className="line"></div>
         <div className="contact-me">
           <div className="contact-me-text">
-            Contact Me <GoArrowDownRight />
+            {t('home.contact')} <GoArrowDownRight />
           </div>
           <IconsRow />
         </div>
@@ -104,7 +68,7 @@ function MainSlider() {
       <div id="mobile" className="title-container">
         <div className="inner-container">
           <Marquee className="marquee-container">
-            <p className="text">I craft seamless user experiences</p>
+            <p className="text">{t('home.tagline')}</p>
           </Marquee>
         </div>
       </div>
@@ -112,7 +76,7 @@ function MainSlider() {
         <MyCodeComponent />
       </div>
       <div id="about" className="title-container">
-        <SectionTitle sectionNumber="01" name="About me" />
+        <SectionTitle section="about" />
       </div>
       {aboutPanels.map((panel, index) => (
         <div key={index} className="panel rose">
@@ -120,7 +84,7 @@ function MainSlider() {
         </div>
       ))}
       <div id="projects" className="title-container">
-        <SectionTitle sectionNumber="02" name="Things I've built" />
+        <SectionTitle section="projects" />
       </div>
       {projectPanels.map((panel, index) => (
         <div key={index} className="panel cards">
@@ -128,7 +92,7 @@ function MainSlider() {
         </div>
       ))}
       <div id="experience" className="title-container">
-        <SectionTitle sectionNumber="03" name="Where I've worked" />
+        <SectionTitle section="experience" />
       </div>
       <div className="center-container">
         <ExperienceSection />
@@ -157,7 +121,7 @@ function MainSlider() {
       <div className="title-container">
         <div className="inner-container">
           <Marquee className="marquee-container">
-            <p className="text">I craft seamless user experiences</p>
+            <p className="text">{t('home.tagline')}</p>
           </Marquee>
         </div>
       </div>
@@ -165,7 +129,7 @@ function MainSlider() {
         <MyCodeComponent />
       </div>
       <div id="about" className="title-container">
-        <SectionTitle sectionNumber="01" name="About me" />
+        <SectionTitle section="about" />
       </div>
       <ReusableSlider
         ref={aboutSliderRef}
@@ -176,7 +140,7 @@ function MainSlider() {
         panelClassName="rose"
       />
       <div id="projects" className="title-container">
-        <SectionTitle sectionNumber="02" name="Things I've built" />
+        <SectionTitle section="projects" />
       </div>
       <ReusableSlider
         className="cards-container"
@@ -185,7 +149,7 @@ function MainSlider() {
         panels={projectPanels}
       />
       <div id="experience" className="title-container">
-        <SectionTitle sectionNumber="03" name="Where I've worked" />
+        <SectionTitle section="experience" />
       </div>
       <div className="center-container">
         <ExperienceSection />

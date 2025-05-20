@@ -1,12 +1,13 @@
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import './SectionTitle.css';
 
 interface Props {
-  sectionNumber: string;
-  name: string;
+  section: 'about' | 'projects' | 'experience';
 }
 
-const SectionTitle = ({ sectionNumber, name }: Props) => {
+const SectionTitle = ({ section }: Props) => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -14,7 +15,7 @@ const SectionTitle = ({ sectionNumber, name }: Props) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
+            entry.target.classList.add('section-title-animate');
           }
         });
       },
@@ -34,8 +35,10 @@ const SectionTitle = ({ sectionNumber, name }: Props) => {
 
   return (
     <div ref={sectionRef} className="name-section">
-      <div className="section-number">{sectionNumber}.</div>
-      <div className="section-name">{name}</div>
+      <div className="section-number secondary-grey">
+        {t(`${section}.sectionNumber`)}.
+      </div>
+      <div className="section-name header-grey">{t(`${section}.title`)}</div>
     </div>
   );
 };

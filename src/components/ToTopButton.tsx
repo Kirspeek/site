@@ -1,29 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { MdOutlineArrowOutward } from 'react-icons/md';
-import './Home.css';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
 const ToTopButton: React.FC = () => {
-  const [isScrolling, setIsScrolling] = useState(false);
-
-  const slowScrollToTop = () => {
-    if (isScrolling) return;
-
-    setIsScrolling(true);
-
-    const scrollToTarget = () => {
-      const currentScroll = window.scrollY;
-
-      if (currentScroll > 10) {
-        window.scrollTo(0, currentScroll - currentScroll / 10);
-        requestAnimationFrame(scrollToTarget);
-      } else {
-        window.scrollTo(0, 0);
-        setIsScrolling(false);
-      }
-    };
-
-    scrollToTarget();
-  };
+  const { t } = useTranslation();
+  const { isScrolling, slowScrollToTop } = useScrollToTop();
 
   return (
     <div className="to-top-button-container">
@@ -32,7 +14,7 @@ const ToTopButton: React.FC = () => {
         onClick={slowScrollToTop}
         disabled={isScrolling}
       >
-        To top
+        {t('navigation.toTop')}
         <span className="arrow-icon">
           <MdOutlineArrowOutward />
         </span>
